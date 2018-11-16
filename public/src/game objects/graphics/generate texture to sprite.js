@@ -7,7 +7,10 @@ var config = {
         update: update
     },
     width: 800,
-    height: 600
+    height: 600,
+    physics: {
+        default: 'arcade'
+    }
 };
 
 var game = new Phaser.Game(config);
@@ -15,12 +18,30 @@ var starGraphics;
 
 function preload ()
 {
+     
+
 }
 function create() {
+    group = this.physics.add.group();
     starGraphics = this.make.graphics({x: 0, y: 0, add: false});
     drawStar(starGraphics, 105, 105,  5, 100, 50, 0xFFFF00, 0xFF0000);
     starGraphics.generateTexture('starGraphics', 210, 210);
-    image = this.add.image(400, 300, 'starGraphics');
+    // star = this.physics.add.image(400, 300, 'starGraphics');
+    group.createMultiple({ 
+        key: 'starGraphics', 
+        frame: [0], 
+        frameQuantity: 2, 
+        repeat: 1,
+        setScale:{x:0.5,y:0.5},
+        setRotation: { value: 0, step: 0.4 },
+        setXY:
+        {
+            x: 100,
+            y: 100,
+            stepX: 64,
+            stepY: 64
+        }
+    });
 }
 
 function update() {

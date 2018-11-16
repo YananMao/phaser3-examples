@@ -26,7 +26,19 @@ function create ()
     // group.createMultiple({ key: 'diamonds', frame: [0,1,2,3,4] });
     // group.createMultiple({ key: 'diamonds', frame: [0,1,2,3,4], repeat: 1 });
     // group.createMultiple({ key: 'diamonds', frame: [0,1,2,3,4], frameQuantity: 4 });
-    group.createMultiple({ key: 'diamonds', frame: [0,1,2,3,4], frameQuantity: 2, repeat: 1 });
+    group.createMultiple(
+        { key: 'diamonds',
+          frame: [0,1,2,3,4], 
+          frameQuantity: 2, 
+          repeat: 1,
+          // setXY:
+          //   {
+          //       x: 100,
+          //       y: 100,
+          //       stepX: 64,
+          //       stepY: 64
+          //   }
+      });
     // group.createMultiple({ key: 'diamonds', frame: [0,1,2,3,4], randomFrame: true });
     // group.createMultiple({ key: 'diamonds', frame: [0,1,2,3,4], randomFrame: true, frameQuantity: 2 });
     // group.createMultiple({ key: 'diamonds', frame: [0,1,2,3,4], yoyo: true });

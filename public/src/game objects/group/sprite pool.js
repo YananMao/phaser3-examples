@@ -40,7 +40,9 @@ function create () {
     this.anims.create({
         key: 'creep',
         frames: this.anims.generateFrameNumbers('alien', { start: 0, end: 1 }),
+        // 1s播放几帧
         frameRate: 2,
+        // -1 无线重复
         repeat: -1
     });
 
@@ -54,6 +56,7 @@ function create () {
             console.log('Created', alien.name);
         },
         removeCallback: function (alien) {
+            debugger
             console.log('Removed', alien.name);
         }
     });
@@ -103,6 +106,7 @@ function activateAlien (alien) {
 }
 
 function addAlien () {
+    // debugger
     var alien = group.get(Phaser.Math.Between(250, 800), Phaser.Math.Between(-64, 0));
 
     if (!alien) return; // None free

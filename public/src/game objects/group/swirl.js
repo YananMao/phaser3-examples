@@ -27,5 +27,6 @@ function create ()
 
 function update ()
 {
+    console.log('时间', new Date().getSeconds())
     Phaser.Actions.Rotate(group.getChildren(), 0.005, 0.0005);
 }
